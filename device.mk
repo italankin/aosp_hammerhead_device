@@ -412,3 +412,17 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
 $(call inherit-product-if-exists, hardware/qcom/msm8x74/msm8x74.mk)
 $(call inherit-product-if-exists, vendor/qcom/gpu/msm8x74/msm8x74-gpu-vendor.mk)
+
+# OpenGapps
+GAPPS_VARIANT := pico
+
+GAPPS_FORCE_PACKAGE_OVERRIDES := true
+
+PRODUCT_PACKAGES += \
+    Chrome \
+    CameraGoogle \
+    KeyboardGoogle \
+    GCS \
+    ClockGoogle
+
+$(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
